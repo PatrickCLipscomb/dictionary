@@ -39,4 +39,13 @@ describe('Word') do
       expect(test_word.alternative_spelling()).to(eq(nil))
     end
   end
+  describe('.find') do
+    it('returns an object based on its id') do
+      test_word = Word.new(:word => 'arcane', :pronunciation => 'ahr-keyn', :alternative_spelling => nil, :origin => 'mid 16th centurny Latin')
+      test_word.save()
+      test_word2 = Word.new(:word => 'gratuitous', :pronunciation => 'gruh-too-i-tuh s', :alternative_spelling => nil, :origin => '17th century Latin')
+      test_word2.save()
+      expect(Word.all()).to(eq([test_word, test_word2]))
+    end
+  end
 end

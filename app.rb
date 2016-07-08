@@ -35,7 +35,20 @@ post('/add_another_definition') do
   @new_word = Word.find(id)
   @new_definition = Definition.new(:definition => definition, :example => example)
   @new_word.add_definition(@new_definition)
-  @new_word.save()
+  @words = Word.all()
+  counter = 0
+  @words.each() do |word|
+    if word.word() == @new_word.word()
+      @words[counter] = @new_word
+    end
+    counter += 1
+  end
+  @words
+  erb(:success)
+end
+
+get('/definition_addition') do
+  @new_word = Word.find(params.fetch('id').to_i())
   erb(:success)
 end
 
