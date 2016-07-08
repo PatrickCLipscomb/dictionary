@@ -1,0 +1,24 @@
+<div class="container">
+  <div class='row'>
+    <div class='col-xs-6 border'>
+      <h2>Word Information</h2>
+      <ul class='display_word'>
+        <li>Word: <%= @word.word() %></li>
+        <li>Origin: <%= @word.origin() %></li>
+        <li>Pronunciation: <%= @word.pronunciation() %></li>
+        <li>Alternative Spelling: <%= @word.alternative_spelling() %></li>
+      </ul>
+    </div>
+    <div class='col-xs-6 border'>
+      <h2>Definitions with examples.</h2>
+      <ul>
+        <% @word.definitions().each() do |definition| %>
+        <li>Definition: <%= definition.definition() %></li>
+          <ul class="example">
+            <li><%= definition.example() %></li>
+          </ul>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -26,11 +26,12 @@
   </div>
   <button type="submit" class='btn btn-primary'>Add word to list</button>
 </form>
+<h3><a href="/clear">Clear</a></h3>
 </div>
-
-<div class="container">
-  <a href="/show_word_list">Show a list of created word links</a>
-  <ul>
+<hr>
+<div class="container center">
+  <h2>List of Created Words</h1>
+  <ul class='example'>
     <% @words.each() do |word| %>
       <li><a href="/word/<%= word.id() %>"><%= word.word() %></a></li>
     <% end %>

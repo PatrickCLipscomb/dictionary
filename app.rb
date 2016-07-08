@@ -5,6 +5,12 @@ require('./lib/definitions')
 require('./lib/words')
 
 get('/') do
+  @words = Word.all()
+  erb(:index)
+end
+
+get('/clear') do
+  Word.clear()
   erb(:index)
 end
 
@@ -31,11 +37,6 @@ post('/add_another_definition') do
   @new_word.add_definition(@new_definition)
   @new_word.save()
   erb(:success)
-end
-
-get('/show_word_list') do
-  @words = Word.all()
-  erb(:index)
 end
 
 get('/word/:id') do

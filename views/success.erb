@@ -10,6 +10,7 @@
     </li>
     <% end %>
   </ol>
+  <hr>
   <h3>Add another definition for '<%= @new_word.word() %>'?</h3>
   <form action="/add_another_definition" method="post">
     <input type="hidden" name="id" value="<%= @new_word.id() %>">

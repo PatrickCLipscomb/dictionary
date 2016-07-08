@@ -1,0 +1,15 @@
+<div class="container">
+  <a href="/show_word_list">Show a list of created word links</a>
+  <% if @words.class != nil %>
+    <ul>
+      <% @words.each() do |word| %>
+        <li><a href="/word/<%= word.id() %>"><%= word.word() %></a></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+get('/show_word_list') do
+  @words = Word.all()
+  erb(:index)
+end
