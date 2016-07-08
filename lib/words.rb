@@ -12,6 +12,9 @@ class Word
   define_method(:id) do
     @id
   end
+  define_method(:definitions) do
+    @definitions
+  end
   define_method(:save) do
     @@words.push(self)
   end

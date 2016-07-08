@@ -1,0 +1,38 @@
+<div class='center'>
+<form action="create_word" method="post">
+  <div class="form-group"
+    <label for="word">Enter word</label>
+    <input type="text" name="word">
+  </div>
+  <div class="form-group"
+    <label for="definition">Enter definition</label>
+    <textarea name="definition" rows="3" cols="40"></textarea>
+  </div>
+  <div class="form-group"
+    <label for="example">Enter example use of word</label>
+    <input type="text" name="example">
+  </div>
+  <div class="form-group"
+    <label for="pronunciation">Enter pronunciation</label>
+    <input type="text" name="pronunciation">
+  </div>
+  <div class="form-group"
+    <label for="alternative_spelling">Enter alternative spelling</label>
+    <input type="text" name="alternative_spelling">
+  </div>
+  <div class="form-group"
+    <label for="origin">Enter origin</label>
+    <input type="text" name="origin">
+  </div>
+  <button type="submit" class='btn btn-primary'>Add word to list</button>
+</form>
+</div>
+
+<div class="container">
+  <a href="/show_word_list">Show a list of created word links</a>
+  <ul>
+    <% @words.each() do |word| %>
+      <li><a href="/word/<%= word.id() %>"><%= word.word() %></a></li>
+    <% end %>
+  </ul>
+</div>

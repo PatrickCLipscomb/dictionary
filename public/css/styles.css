@@ -2,3 +2,25 @@ h1 {
   font-family: fantasy;
   text-align: center;
 }
+
+.def {
+  font-size: 20px;
+  font-family: monospace;
+  list-style-position: inside;
+}
+
+.example {
+  font-size: 16px;
+  font-family: monospace;
+  font-style: italic;
+  list-style-type: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.label-beef label {
+  font-size: 20px;
+  font-weight: bold;
+}

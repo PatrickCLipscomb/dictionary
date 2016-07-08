@@ -1,0 +1,25 @@
+<div class='center'>
+  <h2>Congratz! You saved the word '<%= @new_word.word() %>'</h2>
+  <h3><%= @new_word.word() %>'s definition(s):</h3>
+  <ol>
+    <% @new_word.definitions().each() do |definition| %>
+    <li class='def'>Definition: <%= definition.definition() %>
+    <ul>
+      <li class='example'>Example: <%= definition.example() %></li>
+    </ul>
+    </li>
+    <% end %>
+  </ol>
+  <h3>Add another definition for '<%= @new_word.word() %>'?</h3>
+  <form action="/add_another_definition" method="post">
+    <input type="hidden" name="id" value="<%= @new_word.id() %>">
+    <label for="definition">New Definition</label>
+    <textarea name="definition" rows="5" cols="40"></textarea>
+    <label for="example">Example for the new definition.</label>
+    <input type="text" name="example">
+    <button type="submit">Add Definition</button>
+  </form>
+  <h3>
+    <a href="/">Home</a>
+  </h3>
+</div>
